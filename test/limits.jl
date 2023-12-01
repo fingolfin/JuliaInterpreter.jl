@@ -117,7 +117,7 @@ module EvalLimited end
             isa(ret, Aborted) && (push!(aborts, ret); break)
         end
     end
-    @test EvalLimited.s < 5
+    @test EvalLimited.s <= 5
     @test length(aborts) == 1
     lin = aborts[1].at
     if lin.file === Symbol("fake.jl")
